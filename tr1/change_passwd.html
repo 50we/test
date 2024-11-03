@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Change password</title>
+        <link rel="stylesheet" href="css/login.css">
+     </head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Изменить пароль
+         </div>
+        <form  method="post">
+            <div class="field">
+                <label for="new_passwd">Новый пароль:</label><br>
+                <input type="text" id="new_passwd" name="new_passwd"><br>
+            </div>
+        <div class="field">
+            <input type="submit" value="Отправить">
+        </div>
+        </form>
+    </div>
+{% if message is not none %}
+<div id="message">{{ message | safe }}</div>
+{% endif %}
+
+</body>

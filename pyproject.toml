@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "vuln-web"
+version = "0.1.0"
+description = ""
+authors = ["Kewtd <50we@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

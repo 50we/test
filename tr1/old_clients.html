@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>Что о нас пишут покупатели</head>
+
+<body>
+    <p>Расскажите о Ваших впечатлениях о компании</p>
+    {% for feedback in photo_data %}
+    <div>
+        <p>Имя пользователя: {{ feedback[4] }}</p>
+        <p>Кооментарий: {{ feedback[3] | safe }}</p>
+        <p>
+            <img src='{{ feedback[2] | safe }}''>
+        </p>
+    </div>
+    {% endfor %}
+    <form method="post" enctype="multipart/form-data">
+        <label for="feedback">Текст</label>
+        <input id="feedback" name="feedback" type="text" />
+        <label for="file">Изображение</label>
+        <input id="file" name="file" type="file" />
+        <button>Upload</button>
+    </form>
+</body>
+<script src="js/clients.js"></script>
+</html>

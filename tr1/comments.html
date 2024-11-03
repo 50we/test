@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head hidden>
+    <meta charset="utf-8">
+    Комментарии для продукта с id {{ item_id }}
+    <link rel="stylesheet" href="../../../css/login.css">
+</head>
+
+<body>
+    {% for com in comments %}
+    <div class="wrapper">
+        <center>
+            <!-- <div class="field">
+                User id: {{ com[0] }}
+            </div> -->
+            <div class="field">
+                Choco id: {{ com[1] }}
+            </div>
+            <div class="field">
+                <h6 id="item_id" hidden> {{ com[1] }} </h6>
+            </div>
+            <div class="field">
+                <div class="field">
+                    Comment: {{ com[2] | safe }} <br />
+                </div>
+            </div>
+            <br />
+        </center>
+        {% endfor %}<br />
+
+        <div class="wrapper">
+            <form id="Comment">
+                <div class="field">
+                    <label for="comment">Post comment:</label><br>
+                </div>
+                <div class="field">
+                    <input type="text" id="comment" name="comment"><br>
+                </div>
+                <div class="field">
+                    <input type="submit" value="Post">
+                </div>
+            </form>
+            <script src="http://localhost:8000/js/comments.js"></script>
+        </div>
+</body>
+
+
+</html>

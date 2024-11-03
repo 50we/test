@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h>Welcome back, <div id="username">{{ name }}</div>
+    </h>
+<p>Загрузите фото профиля: </p>
+<p>Ваши денюшки: </p>
+
+<form action="/users/{{ name }}" enctype='multipart/form-data' method='post'>
+    <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png"/>>
+    <input type="submit">
+</form>
+<div class="pass-link">
+    <a href="http://localhost:8000/"> Main page </a>
+ </div>
+<div class="pass-link">
+    <a href="http://localhost:8000/change_passwd"">Change password</a>
+ </div>
+ <div class="pass-link">
+    <a href="http://localhost:8000/users/{{ name }}/send_money"">Send money</a>
+ </div>
+ <li class="nav-item active">
+    <button class="nav-link" onclick="AdminSecret()" type="button">My secrets</button>
+  </li>
+  <div id="secrets">
+  </div>
+  <script>
+    let name = document.getElementById('username').value;
+    let data = {
+    username: name
+    };
+    function AdminSecret() {
+        fetch('/users/info/secrets', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("secrets").innerHTML = "Secret: " + data;
+        })
+        .catch(error => console.error('Error:', error));
+      }
+  </script>
+</body>
+</html>

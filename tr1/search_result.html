@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Страница продукта</title>
+    <link rel="stylesheet" href="css/login.css">
+ </head>
+<div class="wrapper">
+    <div class="field">
+        <h6>Product name: {{ info[1] | safe }}</h6>
+    </div>
+    <h6>Available: {{ info[2] }}</h6>
+    <div class="img-box">
+        <img src="{{ info[3] }}" alt="">
+    </div>
+</div>
+</html>

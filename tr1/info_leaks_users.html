@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Find user</title>
+        <link rel="stylesheet" href="../css/login.css">
+     </head>
+
+<body>
+    <h6>Поиск пользователя</h6>
+    <h6> Имя пользователя: {{ name | safe }} </h6>
+    <h6>Информация о пользователе: {{ info[2] }}</h6>
+    <div class="img-box">
+        <img src="{{ info[3] }}" alt="">
+    </div>
+</body>
+</html>

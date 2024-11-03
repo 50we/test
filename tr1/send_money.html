@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login Form</title>
+      <link rel="stylesheet" href="/css/login.css">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title">
+            Перевести денюжки
+         </div>
+         {% if message is not none %}
+         <div id="error-box">{{ message | safe }}</div>
+         {% endif %}
+         <form id="Send" action="/users/{{ username }}/send_money">
+            <div class="field">
+               <input type="text" id="money" name="money" />
+               <label>Сумма перевода</label>
+            </div>
+            <div class="field">
+               <input type="text" id="card" name="card" />
+               <label>Номер каты</label>
+            </div>
+            <div class="field">
+               <input type="text" id="cvv" name="cvv" />
+               <label>CVV код</label>
+            </div>
+            <div class="field">
+               <input type="submit" value="Отправить" />
+            </div>
+         </form>
+         <script src="http://localhost:8000/js/send_money.js"></script>
+      </div>
+   </body>
+</html>

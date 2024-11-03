@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <a href="{{ name }}">Check me</a>
+    <h6>Product page</h6>
+    <div>
+    </h6> Search: {{ name | safe}} </h6>
+</div>
+<div>
+    </h6> Product name: {{ info[1] | safe}} </h6>
+</div>
+    <h6>Available: {{ info[2] }}</h6>
+    <div class="img-box">
+        <img src="{{ info[3] }}" alt="">
+    </div>
+    <a href="/item/{{ info[0] }}/comments/"">Comments </a>
+</body>
+</html>

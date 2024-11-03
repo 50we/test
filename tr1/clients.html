@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>Что о нас пишут покупатели</head>
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/button.css">
+<link rel="stylesheet" href="../css/image.css">
+
+<body>
+    {% for feedback in photo_data %}
+
+    <p>Имя пользователя: {{ feedback[4] | safe }}</p>
+    <p>Кооментарий: {{ feedback[3] | safe }}</p>
+    <p>
+        <img src='{{ feedback[2] | safe }}'>
+    </p>
+
+    <br>
+    <br>
+    {% endfor %}
+    <div class="wrapper">
+        <div class="title">
+            Комментарий
+        </div>
+        <form id="FeedbackForm">
+            <div class="field">
+                <p>Расскажите о своих впечатлениях</p>
+                <label for="feedback"> </label>
+                <input id="feedback" name="feedback" type="text" />
+            </div>
+            <br>
+            <div class="field">
+                <label for="file"></label>
+                <input id="file" name="file" type="file" />
+            </div>
+            <br>
+            <div class="field">
+                <p>Загрузите изображение по ссылке:</p>
+                <label for="link"> </label>
+                <input id="link" name="link" type="text" />
+            </div>
+            <br>
+            <br>
+            <div class="field">
+                <button>Отправить</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="js/clients.js"></script>
+
+</html>
